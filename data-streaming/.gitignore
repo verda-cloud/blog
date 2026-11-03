@@ -1,0 +1,44 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+.aws/
+credentials.json
+
+# Python environments and caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Downloaded datasets and generated shards
+/downloads/
+/datasets/
+/inaturalist/
+/data_mds/
+*.parquet
+*.arrow
+*.mds
+*.mds.*
+
+# Local dataset caches
+/cache/
+/.cache/
+/mds_cache/
+
+# Routine benchmark output
+/gpu_logs/
+/results/logs/
+/results/local/
+slurm-*.out
+baseline-*.out
+mds-*.out
+*.err
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
