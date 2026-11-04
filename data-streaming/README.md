@@ -16,7 +16,7 @@ PyTorch DistributedDataParallel (DDP) runs one training process per GPU. Slurm a
 
 ### Hardware and configuration
 
-The experiments run on a Verda [Instant Cluster] (https://verda.com/blog/instant-clusters-h1-2026) with a Slinky environment, which offers a preconfigured Slurm environment on top of Kubernetes.
+The experiments run on a Verda [Instant Cluster](https://verda.com/blog/instant-clusters-h1-2026) with a Slinky environment, which offers a preconfigured Slurm environment on top of Kubernetes.
 
 Our cluster comprises two nodes of 8 x NVIDIA B300 GPUs each. The experiment can be adapted to fit different clusters with a few configuration changes.
 
@@ -47,9 +47,6 @@ We measure:
 * data_prep/   Download, upload, and MDS conversion scripts
 * training/    Parquet and MDS training benchmarks
 * slurm/       Slurm job scripts
-* analysis/    GPU utilization plotting code
-* results/     Selected logs, configurations, and plots
-* docs/        Additional experiment notes
 
 ## Run the experiments
 
@@ -82,7 +79,7 @@ export DATA_MDS_PREFIX="inaturalist_mds_v1"
 `python data_prep/download_inaturalist.py`
 There should now be an `inaturalist` folder in the root directory.
 
-`python3 data_prep/upload_data.py ./downloads/inaturalist \ --prefix inaturalist`
+`python3 data_prep/upload_data.py ./inaturalist \ --prefix inaturalist`
 
 `export DATA_PREFIX="inaturalist/data"` # change folder path as appropriate
 
@@ -127,7 +124,7 @@ For a single eight-GPU node, change the Slurm node count to one and keep eight p
 | Training-step time | Training work, including distributed communication |
 | GPU utilization | GPU activity sampled approximately once per second using nvidia-smi |
 
-It's worth noting input-wait fraction doesn't represent a percentage of GPU idleness. Similarly, high GPU utliziation doesn't necessarily mean productive model computation; distributed communication can also register as accelerator activity.
+It's worth noting input-wait fraction doesn't represent a percentage of GPU idleness. Similarly, high GPU utilisation doesn't necessarily mean productive model computation; distributed communication can also register as accelerator activity.
 
 ## Sample results
 

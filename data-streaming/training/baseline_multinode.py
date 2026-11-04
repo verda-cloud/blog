@@ -31,7 +31,7 @@ def make_fs():
 def read_manifest():
     fs = make_fs()
     bucket = os.environ['VERDA_S3_BUCKET']
-    prefix = os.getenv('DATA_PREFIX', 'intauralist/data').strip('/')
+    prefix = os.getenv('DATA_PREFIX', 'inaturalist/data').strip('/')
     paths = sorted(fs.glob(f'{bucket}/{prefix}/train-*.parquet'))
     if not paths:
         raise RuntimeError('No training Parquet files found at the configured prefix.')
