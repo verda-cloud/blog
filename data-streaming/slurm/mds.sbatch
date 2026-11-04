@@ -28,10 +28,7 @@ export WARMUP_STEPS="${WARMUP_STEPS:-5}"
 export MEASURE_STEPS="${MEASURE_STEPS:-200}"
 export DATA_MDS_PREFIX="${DATA_MDS_PREFIX:-inaturalist_mds_v1}"
 
-# Use the node-local path available inside your Slurm jobs.
-export MDS_CACHE_ROOT="${MDS_CACHE_ROOT:-/local}"
-export MDS_CACHE_DIR="$MDS_CACHE_ROOT/$USER/inaturalist_mds/$SLURM_JOB_ID"
-
+# Use the node-local path available inside Slurm jobs.
 export MDS_CACHE_ROOT="${MDS_CACHE_ROOT:-/local}"
 export MDS_CACHE_DIR="$MDS_CACHE_ROOT/$USER/inaturalist_mds/$SLURM_JOB_ID"
 
