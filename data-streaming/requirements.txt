@@ -1,0 +1,16 @@
+# Training
+torch
+torchvision
+numpy
+
+# Dataset preparation and image decoding
+datasets>=2.20.0
+pyarrow
+Pillow
+
+# Object storage
+boto3
+s3fs
+
+# MDS conversion and streaming
+mosaicml-streaming
